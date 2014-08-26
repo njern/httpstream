@@ -2,7 +2,6 @@ package httpstream
 
 import (
 	"bufio"
-	"bytes"
 	"errors"
 	"fmt"
 	"net/http"
@@ -96,7 +95,6 @@ func (c *Client) readStream(done chan error) {
 			return
 		}
 
-		line = bytes.TrimSpace(line)
 		if len(line) == 0 {
 			continue
 		}
